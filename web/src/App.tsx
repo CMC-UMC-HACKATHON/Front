@@ -11,8 +11,8 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       { index: true, element: <Challenge /> },
-      // { path: 'challenge/:id', element: <ChallengeDetails /> },
-      { path: 'challenge', element: <ChallengeDetails /> },
+      { path: 'challenge/:id', element: <ChallengeDetails /> },
+      // { path: 'challenge', element: <ChallengeDetails /> },
       { path: 'mission', element: <Mission /> },
       { path: 'mypage', element: <Mypage /> },
       { path: 'register', element: <Register /> },
