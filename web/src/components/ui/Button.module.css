@@ -24,6 +24,6 @@ button {
   height: 48px;
 }
 .sm {
-  width: 80px;
+  min-width: 80px;
   height: 34px;
 }
