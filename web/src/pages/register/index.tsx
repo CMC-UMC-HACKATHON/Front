@@ -1,17 +1,23 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from '../register/Register.module.css';
+import { useMutation } from '@tanstack/react-query';
+import { signup } from '@/services/members.service';
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    id: '', // 아이디
+    loginId: '', // 아이디
     password: '',
-    passwordConfirm: '', // 비밀번호 확인
+    checkPassword: '', // 비밀번호 확인
     username: '', // 닉네임
     gender: '', // 성별
-    phone: '',
+    phoneNumber: '',
   });
 
-  const handleChange = (e) => {
+  const { mutateAsync, isPending } = useMutation({
+    mutationFn: async (payload: SignupPayload) => await signup(payload),
+  });
+
+  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -19,16 +25,16 @@ const Register = () => {
     });
   };
 
-  const handleGenderSelect = (gender) => {
+  const handleGenderSelect = (gender: string) => {
     setFormData({
       ...formData,
       gender,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
-    console.log('Form Data Submitted:', formData);
+    await mutateAsync(formData);
   };
 
   return (
@@ -38,10 +44,10 @@ const Register = () => {
         <div className={styles['form-group']}>
           <input
             type="text"
-            id="id"
-            name="id"
+            id="loginId"
+            name="loginId"
             className={styles.input}
-            value={formData.id}
+            value={formData.loginId}
             onChange={handleChange}
             placeholder="아이디"
           />
@@ -60,10 +66,10 @@ const Register = () => {
         <div className={styles['form-group']}>
           <input
             type="password"
-            id="passwordConfirm"
-            name="passwordConfirm"
+            id="checkPassword"
+            name="checkPassword"
             className={styles.input}
-            value={formData.passwordConfirm}
+            value={formData.checkPassword}
             onChange={handleChange}
             placeholder="비밀번호 확인"
           />
@@ -83,17 +89,17 @@ const Register = () => {
           <div className={styles['gender-buttons']}>
             <div
               className={`${styles['gender-button']} ${
-                formData.gender === 'male' ? styles.selected : ''
+                formData.gender === '남성' ? styles.selected : ''
               }`}
-              onClick={() => handleGenderSelect('male')}
+              onClick={() => handleGenderSelect('남성')}
             >
               남성
             </div>
             <div
               className={`${styles['gender-button']} ${
-                formData.gender === 'female' ? styles.selected : ''
+                formData.gender === '여성' ? styles.selected : ''
               }`}
-              onClick={() => handleGenderSelect('female')}
+              onClick={() => handleGenderSelect('여성')}
             >
               여성
             </div>
@@ -102,10 +108,10 @@ const Register = () => {
         <div className={styles['form-group']}>
           <input
             type="text"
-            id="phone"
-            name="phone"
+            id="phoneNumber"
+            name="phoneNumber"
             className={styles.input}
-            value={formData.phone}
+            value={formData.phoneNumber}
             onChange={handleChange}
             placeholder="휴대폰 번호"
           />
