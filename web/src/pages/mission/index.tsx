@@ -1,6 +1,8 @@
 import MissionHeader from '@/components/mission/MissionHeader';
 import styles from './Mission.module.css';
 import MissionDate from '@/components/mission/MissionDate';
+import MissionRequired from '@/components/mission/MissionRequired';
+import MissionToday from '@/components/mission/MissionToday';
 
 const Mission = () => {
   return (
@@ -11,6 +13,8 @@ const Mission = () => {
         <p className="p3">30개</p>
       </div>
       <MissionDate />
+      <MissionRequired />
+      <MissionToday />
     </div>
   );
 };
