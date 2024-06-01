@@ -1,8 +1,68 @@
-@media (max-width: 768px) {
-  .container {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.p {
+  margin-top: 68px;
+  margin-bottom: 88px;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input {
+  width: 327px;
+  height: 47px;
+  border-radius: 3px;
+  border: 1px solid var(--gray4);
+  background: #fff;
+  padding: 0 0 0 20px;
+}
+
+.gender-buttons {
+  display: flex;
+  width: 349px;
+  justify-content: space-between;
+}
+
+.gender-button {
+  width: 43%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.gender-button.selected {
+  border-color: var(--purple1);
+  background-color: var(--purple1);
+  color: white;
+}
+
+.button {
+  width: 353px;
+  padding: 10px;
+  background-color: var(--purple1);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
 }
