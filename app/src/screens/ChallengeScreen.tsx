@@ -4,14 +4,13 @@ import {IP_ADDRESS} from '@env';
 import {useWebview} from '../hooks/useWebview';
 import {StyleSheet} from 'react-native';
 
-const Challenge = () => {
+const ChallengeScreen = () => {
   const webviewRef = useRef<WebView>(null);
 
   const {handleMessageFromWeb, handleWebviewError, sendMessageToWeb} =
     useWebview(webviewRef);
 
   return (
-    // <WebView ref={webviewRef} source={{uri: `http://${IP_ADDRESS}:3000`}} />
     <WebView
       ref={webviewRef}
       source={{uri: `http://${IP_ADDRESS}:3000`}}
@@ -32,4 +31,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Challenge;
+export default ChallengeScreen;

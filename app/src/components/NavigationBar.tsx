@@ -1,41 +1,52 @@
 import React from 'react';
 import {StyleSheet, Text, Image} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Challenge from '../screens/Challenge';
+import ChallengeScreen from '../screens/ChallengeScreen';
+import MissionScreen from '../screens/MissionScreen';
+import MyScreen from '../screens/MyScreen';
+import COLORS from '../styles/colors';
 
 const Tab = createBottomTabNavigator();
 
-// const activeChallengeIcon = require('../assets/svgs/activeChallengeIcon.svg');
-// const inactiveChallengeIcon = require('../assets/svgs/inactiveChallengeIcon.svg');
-// const activeMissionIcon = require('../assets/svgs/activeMissionIcon.svg');
-// const inactiveMissionIcon = require('../assets/svgs/inactiveMissionIcon.svg');
-// const activeMypageIcon = require('../assets/svgs/activeMypageIcon.svg');
-// const inactiveMypageIcon = require('../assets/svgs/inactiveMypageIcon.svg');
+const activeChallengeIcon = require('../assets/svgs/activeChallengeIcon.svg');
+const inactiveChallengeIcon = require('../assets/svgs/inactiveChallengeIcon.svg');
+const activeMissionIcon = require('../assets/svgs/activeMissionIcon.svg');
+const inactiveMissionIcon = require('../assets/svgs/inactiveMissionIcon.svg');
+const activeMypageIcon = require('../assets/svgs/activeMypageIcon.svg');
+const inactiveMypageIcon = require('../assets/svgs/inactiveMypageIcon.svg');
 
 const mainRoutes = [
   {
     name: '챌린지',
-    com: Challenge,
-    // inactiveIcon: inactiveChallengeIcon,
-    // activeIcon: activeChallengeIcon,
+    com: ChallengeScreen,
+    inactiveIcon: inactiveChallengeIcon,
+    activeIcon: activeChallengeIcon,
   },
   {
     name: '미션',
-    com: Challenge,
-    // inactiveIcon: inactiveMissionIcon,
-    // activeIcon: activeMissionIcon,
+    com: MissionScreen,
+    inactiveIcon: inactiveMissionIcon,
+    activeIcon: activeMissionIcon,
   },
   {
     name: 'MY',
-    com: Challenge,
-    // inactiveIcon: inactiveMypageIcon,
-    // activeIcon: activeMypageIcon,
+    com: MyScreen,
+    inactiveIcon: inactiveMypageIcon,
+    activeIcon: activeMypageIcon,
   },
 ];
 
 const NavigationBar = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarStyle: {
+          height: 92,
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
+          paddingHorizontal: 20,
+        },
+      }}>
       {mainRoutes.map(route => (
         <Tab.Screen
           key={`screen-${route.name}`}
@@ -44,11 +55,10 @@ const NavigationBar = () => {
           options={{
             tabBarIcon: ({focused}) => {
               return (
-                // <Image
-                //   source={focused ? route.activeIcon : route.inactiveIcon}
-                //   style={styles.icon}
-                // />
-                <Text>{route.namea}</Text>
+                <Image
+                  source={focused ? route.activeIcon : route.inactiveIcon}
+                  style={styles.icon}
+                />
               );
             },
             tabBarLabel: ({focused}) => {
@@ -86,15 +96,15 @@ const NavigationBar = () => {
 };
 
 const styles = StyleSheet.create({
-  icon: {height: 22, width: 22, marginTop: 6},
+  icon: {height: 22, width: 22, marginVertical: 6},
   label: {
     fontSize: 12,
-    marginTop: 2,
-    fontFamily: 'Pretendard',
-    color: '#ACB3BC',
+    marginVertical: 10,
+    fontFamily: 'Pretendard-Medium',
+    color: COLORS.gray1,
   },
   labelFocused: {
-    color: '#000000',
+    color: COLORS.purple1,
   },
 });
 
