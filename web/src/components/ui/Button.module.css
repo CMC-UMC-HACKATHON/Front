@@ -1,0 +1,28 @@
+button {
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.primary {
+  background-color: var(--purple1);
+  color: #ffffff;
+}
+.secondary {
+  background-color: var(--purple4);
+  color: var(--purple1);
+}
+.outline {
+  background-color: transparent;
+  border: 1px solid var(--purple1) !important;
+  color: var(--purple1);
+}
+
+.lg {
+  width: 350px;
+  height: 48px;
+}
+.sm {
+  padding: 8px 16px;
+}
