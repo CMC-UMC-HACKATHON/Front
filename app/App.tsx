@@ -14,7 +14,7 @@ const App = () => {
     <SafeAreaView style={styles.container}>
       <WebView
         ref={webviewRef}
-        source={{uri: `http://10.10.150.191:3000`}}
+        source={{uri: `http://${IP_ADDRESS}:3000`}}
         style={styles.webview}
         onMessage={handleMessageFromWeb}
         onError={handleWebviewError}
