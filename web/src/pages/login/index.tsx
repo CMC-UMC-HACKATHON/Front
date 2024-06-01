@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './Login.module.css';
+import { useMutation } from '@tanstack/react-query';
+import { login } from '@/services/members.service';
 
 const Login = () => {
   const [formData, setFormData] = useState({
-    id: '', // 아이디
+    loginId: '', // 아이디
     password: '', // 비밀번호
   });
 
-  const handleChange = (e) => {
+  const { mutateAsync, isPending } = useMutation({
+    mutationFn: async (payload: SigninPayload) => await login(payload),
+    onSuccess: (data) => {
+      if (data && data.result) {
+        localStorage.setItem('accessToken', data.result.accessToken);
+      }
+    },
+  });
+
+  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -15,10 +26,11 @@ const Login = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
     console.log('Form Data Submitted:', formData);
     // 여기에 로그인 처리 로직을 추가하세요.
+    await mutateAsync(formData);
   };
 
   return (
@@ -30,10 +42,10 @@ const Login = () => {
           </label>
           <input
             type="text"
-            id="id"
-            name="id"
+            id="loginId"
+            name="loginId"
             className={styles.input}
-            value={formData.id}
+            value={formData.loginId}
             onChange={handleChange}
             placeholder="아이디"
           />
