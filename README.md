@@ -36,6 +36,12 @@ App
 
 ### 팀원
 
+| Frontend                                                                                                          | Frontend                                                                                                          | Frontend                                                                                                          |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| ![icon](https://github.com/joseph0926/project_02-MoneyNote/assets/100750188/212deebf-579d-409e-83b3-ead4e4ef7a90) | ![icon](https://github.com/joseph0926/project_02-MoneyNote/assets/100750188/212deebf-579d-409e-83b3-ead4e4ef7a90) | ![icon](https://github.com/joseph0926/project_02-MoneyNote/assets/100750188/212deebf-579d-409e-83b3-ead4e4ef7a90) |
+| [이나령](https://github.com/devryyeong)                                                                           | [김영훈](https://github.com/joseph0926)                                                                           | [김준영](https://github.com/JunYoungKr)                                                                           |
+
+
 ### 환경 & 실행 방법
 
 ```shell
