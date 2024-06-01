@@ -1,0 +1,56 @@
+.container {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.date-text {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h3 {
+    color: var(--gray1);
+  }
+
+  .badge {
+    background: var(--purple4);
+    padding: 4px 16px;
+    border-radius: 100px;
+  }
+}
+
+.date-week {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    .circle {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      background-color: var(--gray4);
+    }
+    p {
+      color: var(--gray2);
+      margin: 0;
+    }
+  }
+}
+
+.separator {
+  width: calc(100% + 40px);
+  margin-left: -20px;
+  height: 6px;
+  background-color: var(--gray5);
+}
