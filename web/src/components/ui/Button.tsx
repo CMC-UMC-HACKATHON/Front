@@ -6,6 +6,7 @@ type ButtonProps = {
   className?: string;
   type: 'button' | 'submit';
   children: React.ReactNode;
+  onClick?: () => void;
 };
 
 export const Button = ({
@@ -14,9 +15,11 @@ export const Button = ({
   className,
   type = 'button',
   children,
+  onClick,
 }: ButtonProps) => {
   return (
     <button
+      onClick={onClick}
       type={type}
       className={`${styles[variant]} ${styles[size]} ${className}`}
     >
