@@ -1,0 +1,7 @@
+.badge {
+  width: 56px;
+  height: 22px;
+  color: var(--purple1);
+  background-color: var(--purple4);
+  border: 1px solid var(--purple3);
+}

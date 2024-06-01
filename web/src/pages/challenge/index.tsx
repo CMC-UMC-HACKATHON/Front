@@ -1,11 +1,17 @@
-import { Button } from '@/components/ui/Button';
+import ChallengeHeader from '@/components/challenge/ChallengeHeader';
+
+import styles from './Challenge.module.css';
+import ChallengeFilter from '@/components/challenge/ChallengeFilter';
+import ChallengeList from '@/components/challenge/ChallengeList';
 
 const Challenge = () => {
   return (
     <div>
-      <Button variant="outline" size="sm" type="button" className="flex-center">
-        <h3>테스트</h3>
-      </Button>
+      <ChallengeHeader />
+      <div className={styles['body-container']}>
+        <ChallengeFilter />
+        <ChallengeList />
+      </div>
     </div>
   );
 };
