@@ -10,7 +10,7 @@ const Complete = () => {
         <WorkingSmallSVg />
         <div className={styles.container1}>
           <div className={styles.container2}>
-            <h3 style={{ margin: '0' }}>디지털 보톡스 가바</h3>
+            <h3 style={{ margin: '0' }}>디지털 보톡스 가바!</h3>
             <h4
               style={{ margin: '0', color: 'var(--gray2)', fontWeight: '400' }}
             >
