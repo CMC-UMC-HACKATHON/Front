@@ -7,13 +7,14 @@
 .p {
   margin-top: 68px;
   margin-bottom: 88px;
+  margin: 68px 0 88px 0;
 }
 
 .formContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: flex-start; */
 }
 
 .form-group {
