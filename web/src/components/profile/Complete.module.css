@@ -1,4 +1,40 @@
+.cc {
+}
+
 .h3 {
   margin-top: 16px;
   margin-bottom: 22px;
+}
+
+.working {
+  width: 102px;
+}
+
+.container {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--gray5);
+  padding-bottom: 20px;
+}
+
+.container1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.container2 {
+  margin-left: 20px;
+}
+
+.h4 {
+  display: flex;
+  align-items: flex-end;
+  margin: 0 -60px;
+  color: var(--purple1);
+  text-align: right;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
 }
