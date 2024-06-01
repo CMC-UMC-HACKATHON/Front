@@ -1,8 +1,6 @@
 import * as React from 'react';
 import styles from '../challengeDetails/ChallengeDetailsBody.module.css';
 import PolicySVg from '../../assets/policy.svg?react';
-import ChallengeExplain from './ChallengeExplain';
-import ChallengeDetailsTitle from './ChallengeDetailsTitle';
 
 const ChallengeDetailsPolicy = () => {
   return (

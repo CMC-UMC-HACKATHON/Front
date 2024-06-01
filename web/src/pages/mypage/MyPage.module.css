@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.hr {
+  margin-top: 30px;
+  margin-left: -20px;
+  width: calc(100% + 40px);
+  height: 10px;
+  background-color: var(--gray5);
+  border: none;
+}

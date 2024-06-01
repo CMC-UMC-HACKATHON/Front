@@ -1,0 +1,25 @@
+.h3 {
+  margin-top: 16px;
+  margin-bottom: 22px;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.container2 {
+  display: flex;
+  align-items: center;
+}
+
+.p2 {
+  margin-left: 10px;
+  color: var(--gray2);
+}
+
+.h4 {
+  margin-top: 16px;
+  color: var(--purple1);
+}
