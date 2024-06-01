@@ -13,6 +13,13 @@ export default ({ mode }) => {
     server: {
       port: 3000,
       host: process.env.VITE_IP_ADDRESS,
+      proxy: {
+        '/api': {
+          target: 'http://13.124.113.116:8080',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, ''),
+        },
+      },
     },
     resolve: {
       alias: {
