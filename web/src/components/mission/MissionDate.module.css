@@ -16,7 +16,7 @@
   }
 
   .badge {
-    background-color: var(--purple4);
+    background: var(--purple4);
     padding: 4px 16px;
     border-radius: 100px;
   }
