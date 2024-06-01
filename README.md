@@ -41,7 +41,6 @@ App
 | ![icon](https://github.com/joseph0926/project_02-MoneyNote/assets/100750188/212deebf-579d-409e-83b3-ead4e4ef7a90) | ![icon](https://github.com/joseph0926/project_02-MoneyNote/assets/100750188/212deebf-579d-409e-83b3-ead4e4ef7a90) | ![icon](https://github.com/joseph0926/project_02-MoneyNote/assets/100750188/212deebf-579d-409e-83b3-ead4e4ef7a90) |
 | [이나령](https://github.com/devryyeong)                                                                           | [김영훈](https://github.com/joseph0926)                                                                           | [김준영](https://github.com/JunYoungKr)                                                                           |
 
-
 ### 환경 & 실행 방법
 
 ```shell
@@ -57,3 +56,12 @@ npm install
 npx react-native start
 
 ```
+
+### 브렌치 전략
+
+`main`: 실서버
+`dev`: 개발서버(각 브렌치 머지 후 테스트 환경 브렌치)
+`feat/이슈넘버`: 기능 개발 브렌치
+`bug/버그넘버`: 버그 수정 브렌치
+
+- 커밋 메시지: feat/app or web: [넘버] 커밋 메시지
