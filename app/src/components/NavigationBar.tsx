@@ -5,34 +5,33 @@ import ChallengeScreen from '../screens/ChallengeScreen';
 import MissionScreen from '../screens/MissionScreen';
 import MyScreen from '../screens/MyScreen';
 import COLORS from '../styles/colors';
+import {
+  ActiveChallengeIcon,
+  ActiveMissionIcon,
+  InActiveChallengeIcon,
+  InActiveMissionIcon,
+} from './Icons';
 
 const Tab = createBottomTabNavigator();
-
-const activeChallengeIcon = require('../assets/svgs/activeChallengeIcon.svg');
-const inactiveChallengeIcon = require('../assets/svgs/inactiveChallengeIcon.svg');
-const activeMissionIcon = require('../assets/svgs/activeMissionIcon.svg');
-const inactiveMissionIcon = require('../assets/svgs/inactiveMissionIcon.svg');
-const activeMypageIcon = require('../assets/svgs/activeMypageIcon.svg');
-const inactiveMypageIcon = require('../assets/svgs/inactiveMypageIcon.svg');
 
 const mainRoutes = [
   {
     name: '챌린지',
     com: ChallengeScreen,
-    inactiveIcon: inactiveChallengeIcon,
-    activeIcon: activeChallengeIcon,
+    inactiveIcon: <InActiveChallengeIcon />,
+    activeIcon: <ActiveChallengeIcon />,
   },
   {
     name: '미션',
     com: MissionScreen,
-    inactiveIcon: inactiveMissionIcon,
-    activeIcon: activeMissionIcon,
+    inactiveIcon: <InActiveMissionIcon />,
+    activeIcon: <ActiveMissionIcon />,
   },
   {
     name: 'MY',
     com: MyScreen,
-    inactiveIcon: inactiveMypageIcon,
-    activeIcon: activeMypageIcon,
+    inactiveIcon: <InActiveMissionIcon />,
+    activeIcon: <ActiveMissionIcon />,
   },
 ];
 
@@ -40,11 +39,13 @@ const NavigationBar = () => {
   return (
     <Tab.Navigator
       screenOptions={{
+        headerShown: false,
         tabBarStyle: {
-          height: 92,
+          height: 54,
           borderTopLeftRadius: 20,
           borderTopRightRadius: 20,
           paddingHorizontal: 20,
+          paddingVertical: 4,
         },
       }}>
       {mainRoutes.map(route => (
@@ -54,12 +55,7 @@ const NavigationBar = () => {
           component={route.com}
           options={{
             tabBarIcon: ({focused}) => {
-              return (
-                <Image
-                  source={focused ? route.activeIcon : route.inactiveIcon}
-                  style={styles.icon}
-                />
-              );
+              return focused ? route.activeIcon : route.inactiveIcon;
             },
             tabBarLabel: ({focused}) => {
               switch (route.name) {
@@ -96,10 +92,8 @@ const NavigationBar = () => {
 };
 
 const styles = StyleSheet.create({
-  icon: {height: 22, width: 22, marginVertical: 6},
   label: {
     fontSize: 12,
-    marginVertical: 10,
     fontFamily: 'Pretendard-Medium',
     color: COLORS.gray1,
   },
