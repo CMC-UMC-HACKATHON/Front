@@ -2,6 +2,7 @@ import React, {useRef} from 'react';
 import {SafeAreaView, Button, StyleSheet, Alert} from 'react-native';
 import {WebView} from 'react-native-webview';
 import {useWebview} from './src/hooks/useWebview';
+import {IP_ADDRESS} from '@env';
 
 const App = () => {
   const webviewRef = useRef<WebView>(null);
@@ -13,7 +14,7 @@ const App = () => {
     <SafeAreaView style={styles.container}>
       <WebView
         ref={webviewRef}
-        source={{uri: 'http://10.10.151.205:3000'}}
+        source={{uri: `http://${IP_ADDRESS}:3000`}}
         style={styles.webview}
         onMessage={handleMessageFromWeb}
         onError={handleWebviewError}
