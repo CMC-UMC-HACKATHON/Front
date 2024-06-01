@@ -27,7 +27,7 @@ const Mission = () => {
         <p className="p3">총 미션 달성 수</p>
         <p className="p3">{missions ? missions.completedMissionCount : 0}개</p>
       </div>
-      <MissionDate />
+      <MissionDate challengeId={challengeId || ''} />
       <MissionRequired />
       <MissionToday list={missions?.missionList} />
     </div>
