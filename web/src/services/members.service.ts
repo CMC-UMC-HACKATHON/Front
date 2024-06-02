@@ -1,4 +1,4 @@
-import { customAxios } from '@/utils/customAxios';
+import { customAxios } from '@/lib/customAxios';
 
 export const signup = async (payload: SignupPayload) => {
   const { data } = await customAxios.post('/members/sign-up', payload);

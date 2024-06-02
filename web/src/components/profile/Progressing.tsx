@@ -13,7 +13,7 @@ const Progressing = () => {
           <h3 style={{ marginBottom: '6px' }}>디지털 보톡스 가보자잇~!</h3>
           <div className={styles.container2}>
             <CalenderGray />
-            <p2 className={styles.p2}>2024.06.01 - 2024.08.02</p2>
+            <p className={styles.p2}>2024.06.01 - 2024.08.02</p>
           </div>
         </div>
         <h4 className={styles.h4}>달성률 40%</h4>

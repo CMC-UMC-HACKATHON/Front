@@ -1,7 +1,7 @@
-import { customAxios } from '@/lib/customAxios';
+import { customAxios } from "@/lib/customAxios";
 
-export const getChallenges = async (sortBy: 'POPULAR' | 'LATEST') => {
-  const { data } = await customAxios.get('/challenges', {
+export const getChallenges = async (sortBy: "POPULAR" | "LATEST") => {
+  const { data } = await customAxios.get("/challenges", {
     params: {
       sortBy,
     },

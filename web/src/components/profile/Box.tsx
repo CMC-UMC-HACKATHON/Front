@@ -10,14 +10,14 @@ const Box = () => {
         <button className={styles.Btn}>
           <CreditSVg />
         </button>
-        <p2 className={styles.p2}>결제내역</p2>
+        <p className={styles.p2}>결제내역</p>
       </div>
       <hr className={styles.hr} />
       <div className={styles.container2}>
         <button className={styles.Btn}>
           <RewardSVg />
         </button>
-        <p2 className={styles.p2}>리워드</p2>
+        <p className={styles.p2}>리워드</p>
       </div>
     </div>
   );

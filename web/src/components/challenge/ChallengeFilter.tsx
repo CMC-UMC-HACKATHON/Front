@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from './ChallengeFilter.module.css';
 import { Button } from '@/components/ui/Button';
 import { useSearchParams } from 'react-router-dom';
+import { sendMessageToApp } from '@/utils/appWebview';
 
 const ChallengeFilter = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -9,6 +10,9 @@ const ChallengeFilter = () => {
   const sortBy = searchParams.get('sortBy');
 
   useEffect(() => {
+    sendMessageToApp(
+      JSON.stringify(sortBy ? { sortBy } : { sortBy: 'LATEST' })
+    );
     if (!sortBy) {
       setSearchParams({ sortBy: 'LATEST' });
     }

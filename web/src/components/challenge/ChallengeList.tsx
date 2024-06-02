@@ -4,6 +4,8 @@ import styles from './ChallengeList.module.css';
 import { getChallenges } from '@/services/challenges.service';
 import { useSearchParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { sendMessageToApp } from '@/utils/appWebview';
+import { useEffect } from 'react';
 
 const ChallengeList = () => {
   const [searchParams, _setSearchParams] = useSearchParams();

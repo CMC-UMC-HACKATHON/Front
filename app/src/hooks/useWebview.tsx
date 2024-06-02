@@ -1,8 +1,11 @@
 import {Alert} from 'react-native';
 import WebView, {WebViewMessageEvent} from 'react-native-webview';
 import {WebViewErrorEvent} from 'react-native-webview/lib/WebViewTypes';
+import {useChallenge} from './useChallenge';
 
 export const useWebview = (webviewRef: React.RefObject<WebView<{}>>) => {
+  const {setSortBy} = useChallenge();
+
   // 앱 -> 웹으로 메시지 전송
   const sendMessageToWeb = () => {
     if (webviewRef && webviewRef.current) {
@@ -12,7 +15,10 @@ export const useWebview = (webviewRef: React.RefObject<WebView<{}>>) => {
 
   // 앱 <- 웹 메시지 수신
   const handleMessageFromWeb = (event: WebViewMessageEvent) => {
-    Alert.alert('Message from WebView', event.nativeEvent.data);
+    if (event.nativeEvent.data) {
+      setSortBy(JSON.parse(event.nativeEvent.data) as 'LATEST' | 'POPULAR');
+    }
+    Alert.alert(event.nativeEvent.data);
   };
 
   const handleWebviewError = (syntheticEvent: WebViewErrorEvent) => {

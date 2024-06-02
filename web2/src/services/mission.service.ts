@@ -1,4 +1,4 @@
-import { customAxios } from '@/lib/customAxios';
+import { customAxios } from "@/lib/customAxios";
 
 export const getMissions = async (challengeId: number) => {
   const { data } = await customAxios.get(`/missions/${challengeId}`);
@@ -7,5 +7,10 @@ export const getMissions = async (challengeId: number) => {
 
 export const getMissionsByWeek = async (challengeId: number) => {
   const { data } = await customAxios.get(`/missions/${challengeId}/week`);
+  return data;
+};
+
+export const getMissionResult = async (challengeId: number) => {
+  const { data } = await customAxios.get(`/challenges/${challengeId}/result`);
   return data;
 };

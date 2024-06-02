@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styles from './Login.module.css';
 import { useMutation } from '@tanstack/react-query';
 import { login } from '@/services/members.service';
+import { sendMessageToApp } from '@/utils/appWebview';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +14,9 @@ const Login = () => {
     mutationFn: async (payload: SigninPayload) => await login(payload),
     onSuccess: (data) => {
       if (data && data.result) {
+        sendMessageToApp(
+          JSON.stringify({ accessToken: data.result.accessToken })
+        );
         localStorage.setItem('accessToken', data.result.accessToken);
       }
     },

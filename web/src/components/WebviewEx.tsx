@@ -14,7 +14,9 @@ const WebviewEx = () => {
   return (
     <div>
       <h1>WebView Example</h1>
-      <button onClick={sendMessageToApp}>Send Message to React Native</button>
+      <button onClick={() => sendMessageToApp('')}>
+        Send Message to React Native
+      </button>
     </div>
   );
 };

@@ -7,8 +7,7 @@ import {StyleSheet} from 'react-native';
 const MissionScreen = () => {
   const webviewRef = useRef<WebView>(null);
 
-  const {handleMessageFromWeb, handleWebviewError, sendMessageToWeb} =
-    useWebview(webviewRef);
+  const {handleMessageFromWeb, handleWebviewError} = useWebview(webviewRef);
 
   return (
     <WebView
